@@ -1,15 +1,27 @@
 {% stylesheet %}
   .custom-product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* 3-column fixed */
     gap: 20px;
+    justify-content: center; /* center the grid */
+    max-width: 1000px;
+    margin: 0 auto; /* horizontally center in page */
   }
+
   .custom-product-card {
     border: 1px solid #ddd;
-    padding: 15px;
     position: relative;
     overflow: hidden;
+    aspect-ratio: 1 / 1.3; /* optional: maintain image aspect */
   }
+
+  .custom-product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* make image fully cover */
+    display: block;
+  }
+
   .product-button {
     position: absolute;
     width: 10px;
@@ -21,6 +33,7 @@
     cursor: pointer;
   }
 {% endstylesheet %}
+
 
 <div class="custom-product-grid">
   {% for block in section.blocks %}
