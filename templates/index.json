@@ -108,7 +108,8 @@
         "button_rGWMwd"
       ],
       "custom_css": [
-        ".text-block {color: black;}"
+        ".text-block {color: black;}",
+        ".hero__content-wrapper .button{border-radius: 0;}"
       ],
       "name": "t:names.hero",
       "settings": {
