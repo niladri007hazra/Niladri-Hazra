@@ -15,6 +15,7 @@
         "text_tqQTNE": {
           "type": "text",
           "name": "Collection title",
+          "disabled": true,
           "settings": {
             "text": "<p>{{ closest.collection.title }}</p>",
             "width": "fit-content",
@@ -69,6 +70,7 @@
         "text_tqQTNE",
         "text_twGGkJ"
       ],
+      "disabled": true,
       "name": "Heading",
       "settings": {
         "content_direction": "column",
