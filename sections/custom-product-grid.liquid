@@ -4,7 +4,7 @@
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
   }
-  .product-card {
+  .custom-product-card {
     border: 1px solid #ddd;
     padding: 15px;
     position: relative;
@@ -24,7 +24,7 @@
   {% for block in section.blocks %}
     {% assign product = all_products[block.settings.product] %}
     {% if product %}
-      <div class="product-card">
+      <div class="custom-product-card">
         <input type="checkbox" id="product-{{ forloop.index }}" data-product-id="{{ product.id }}">
         <label for="product-{{ forloop.index }}">{{ product.title }}</label>
         <img src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.title }}" style="width: 100%; margin: 10px 0;" />
