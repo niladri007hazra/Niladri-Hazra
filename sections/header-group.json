@@ -37,8 +37,7 @@
       "custom_css": [
         ".announcement-bar__slides {max-width: unset;}",
         "slideshow-slide.announcement-bar__slide {width: 100%; display: flex; flex-direction: row; align-items: center;}",
-        "slideshow-slide.announcement-bar__slide h2 {margin: 0px;}",
-        "slideshow-slide.announcement-bar__slide a {margin: 0px;}"
+        "slideshow-slide.announcement-bar__slide h2,a {margin: 0px;}"
       ],
       "name": "t:names.announcement_bar",
       "settings": {
