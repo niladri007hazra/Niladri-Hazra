@@ -25,13 +25,23 @@
     {{ block.shopify_attributes }}
     aria-hidden="{% if block_index == 0 %}false{% else %}true{% endif %}"
   >
-    <h2>{{ block.settings.logo-text }}</h2>
-    <p class="announcement-bar__text">
-      {{ block.settings.text }}
-    </p>
+    {% if block.settings.logo-text != blank %}
+      <h2>{{ block.settings.logo-text }}</h2>
+    {% endif %}
+  
+    {% if block.settings.text != blank %}
+      <p class="announcement-bar__text">
+        {{ block.settings.text }}
+      </p>
+    {% endif %}
+  
+    {% if block.settings.text != blank %}
+      
+    {% endif %}
     
-
-    {% if block.settings.link != blank %}
+    
+{% comment %}
+  {% if block.settings.link != blank %}
       <a
         class="announcement-bar__link"
         href="{{ block.settings.link }}"
@@ -40,7 +50,9 @@
           {{ block.settings.text | strip_html }}
         </span>
       </a>
-    {% endif %}
+  {% endif %}
+{% endcomment %}
+    
   </slideshow-slide>
 {%- endunless -%}
 
@@ -141,6 +153,11 @@
       "id": "text",
       "label": "t:settings.text",
       "default": "t:text_defaults.shop_our_latest_arrivals"
+    },
+    {
+      "type": "url",
+      "id": "button-link",
+      "label": "Button label"
     },
     {
       "type": "url",
