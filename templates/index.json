@@ -409,10 +409,46 @@
             "button_right": 0,
             "button_bottom": 0
           }
+        },
+        "product_block_7PMkVn": {
+          "type": "product_block",
+          "settings": {
+            "product": "blue-silk-tuxedo",
+            "button_label": "Click Me",
+            "button_top": 10,
+            "button_left": 0,
+            "button_right": 0,
+            "button_bottom": 0
+          }
+        },
+        "product_block_GjbLPE": {
+          "type": "product_block",
+          "settings": {
+            "product": "",
+            "button_label": "Click Me",
+            "button_top": 10,
+            "button_left": 0,
+            "button_right": 0,
+            "button_bottom": 0
+          }
+        },
+        "product_block_ENwRUm": {
+          "type": "product_block",
+          "settings": {
+            "product": "",
+            "button_label": "Click Me",
+            "button_top": 10,
+            "button_left": 0,
+            "button_right": 0,
+            "button_bottom": 0
+          }
         }
       },
       "block_order": [
-        "product_block_CCfYKK"
+        "product_block_CCfYKK",
+        "product_block_7PMkVn",
+        "product_block_GjbLPE",
+        "product_block_ENwRUm"
       ],
       "name": "Custom Product Grid",
       "settings": {}
