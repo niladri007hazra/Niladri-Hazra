@@ -442,13 +442,37 @@
             "button_right": 0,
             "button_bottom": 0
           }
+        },
+        "product_block_39bEPf": {
+          "type": "product_block",
+          "settings": {
+            "product": "classic-varsity-top",
+            "button_label": "Click Me",
+            "button_top": 110,
+            "button_left": 50,
+            "button_right": 0,
+            "button_bottom": 0
+          }
+        },
+        "product_block_7MTTmf": {
+          "type": "product_block",
+          "settings": {
+            "product": "",
+            "button_label": "Click Me",
+            "button_top": 10,
+            "button_left": 0,
+            "button_right": 0,
+            "button_bottom": 0
+          }
         }
       },
       "block_order": [
         "product_block_CCfYKK",
         "product_block_7PMkVn",
         "product_block_GjbLPE",
-        "product_block_ENwRUm"
+        "product_block_ENwRUm",
+        "product_block_39bEPf",
+        "product_block_7MTTmf"
       ],
       "name": "Custom Product Grid",
       "settings": {}
