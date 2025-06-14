@@ -457,10 +457,10 @@
         "product_block_7MTTmf": {
           "type": "product_block",
           "settings": {
-            "product": "",
+            "product": "dark-denim-top",
             "button_label": "Click Me",
-            "button_top": 10,
-            "button_left": 0,
+            "button_top": 200,
+            "button_left": 200,
             "button_right": 0,
             "button_bottom": 0
           }
