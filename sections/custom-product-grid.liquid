@@ -1,23 +1,23 @@
 {% stylesheet %}
   .custom-product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3-column fixed */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    justify-content: center; /* center the grid */
+    justify-content: center;
     max-width: 1000px;
-    margin: 50px auto; /* horizontally center in page */
+    margin: 50px auto;
   }
 
   .custom-product-card {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 1 / 1; /* optional: maintain image aspect */
+    aspect-ratio: 1 / 1;
   }
 
   .custom-product-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* make image fully cover */
+    object-fit: cover;
     display: block;
   }
 
@@ -49,7 +49,6 @@
             bottom: {{ block.settings.button_bottom }}px;
           "
         >
-          
         </button>
       </div>
     {% endif %}
