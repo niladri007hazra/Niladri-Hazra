@@ -424,7 +424,7 @@
         "product_block_GjbLPE": {
           "type": "product_block",
           "settings": {
-            "product": "",
+            "product": "chequered-red-shirt",
             "button_label": "Click Me",
             "button_top": 10,
             "button_left": 0,
@@ -435,7 +435,7 @@
         "product_block_ENwRUm": {
           "type": "product_block",
           "settings": {
-            "product": "",
+            "product": "classic-leather-jacket",
             "button_label": "Click Me",
             "button_top": 10,
             "button_left": 0,
