@@ -1,5 +1,5 @@
 {% stylesheet %}
-  .product-grid {
+  .custom-product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
@@ -20,7 +20,7 @@
   }
 {% endstylesheet %}
 
-<div class="product-grid">
+<div class="custom-product-grid">
   {% for block in section.blocks %}
     {% assign product = all_products[block.settings.product] %}
     {% if product %}
