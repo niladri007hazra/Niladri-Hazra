@@ -404,8 +404,8 @@
           "settings": {
             "product": "black-leather-bag",
             "button_label": "Click Me",
-            "button_top": 111,
-            "button_left": 110,
+            "button_top": 105,
+            "button_left": 105,
             "button_right": 0,
             "button_bottom": 0
           }
