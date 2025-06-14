@@ -64,6 +64,9 @@
         "logo_4AeNBU",
         "text_iXYWz6"
       ],
+      "custom_css": [
+        ".text-block {color: black;}"
+      ],
       "name": "t:names.hero",
       "settings": {
         "link": "",
