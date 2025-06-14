@@ -42,4 +42,5 @@ slideshow-slide.announcement-bar__slide a span {
   width: 40%;
   background: #fbfbfb;
   padding: 30px;
+  height: fit-content;
 }
