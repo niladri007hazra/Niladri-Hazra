@@ -426,8 +426,8 @@
           "settings": {
             "product": "chequered-red-shirt",
             "button_label": "Click Me",
-            "button_top": 10,
-            "button_left": 0,
+            "button_top": 100,
+            "button_left": 100,
             "button_right": 0,
             "button_bottom": 0
           }
