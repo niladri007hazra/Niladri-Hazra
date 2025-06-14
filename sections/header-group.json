@@ -34,13 +34,7 @@
       "block_order": [
         "announcement_UbkHrQ"
       ],
-      "custom_css": [
-        ".announcement-bar__slides {max-width: unset;}",
-        "slideshow-slide.announcement-bar__slide {width: 100%; display: flex; flex-direction: row; align-items: center;}",
-        "slideshow-slide.announcement-bar__slide h2,a {margin: 0px;}",
-        "slideshow-slide.announcement-bar__slide a {padding: 5px 15px; background: yellow; display: flex; align-items: center; gap: 10px;}",
-        "slideshow-slide.announcement-bar__slide a span {width: 20px;}"
-      ],
+      "custom_css": [],
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 5,
