@@ -18,7 +18,9 @@
           "type": "_announcement",
           "settings": {
             "logo-text": "TISSO VISON",
-            "text": "Shop our latest arrivals!",
+            "text": "Find the ideal gift for your loved ones.",
+            "button-link": "",
+            "button-label": "choose gift",
             "link": "#",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
