@@ -19,7 +19,7 @@
           "settings": {
             "logo-text": "TISSO VISON",
             "text": "Shop our latest arrivals!",
-            "link": "",
+            "link": "#",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
             "weight": "",
