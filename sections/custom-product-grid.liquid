@@ -21,16 +21,23 @@
     display: block;
   }
 
-  .product-button {
-    position: absolute;
-    width: 10px;
-    height: 25px;
-    padding: 8px 12px;
-    background-color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-  }
+ .product-button {
+  position: absolute;
+  width: 10px;
+  height: 25px;
+  padding: 8px 12px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.product-button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
+}
+
 {% endstylesheet %}
 
 
