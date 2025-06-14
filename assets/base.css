@@ -4117,3 +4117,7 @@ text-component {
   transform: none;
   box-shadow: none;
 }
+
+.menu-list__link {
+    background: #76871d;
+}
