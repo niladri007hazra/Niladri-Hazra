@@ -395,10 +395,32 @@
         "padding-block-start": 48,
         "padding-block-end": 96
       }
+    },
+    "custom_product_grid_8pYPEp": {
+      "type": "custom-product-grid",
+      "blocks": {
+        "product_block_CCfYKK": {
+          "type": "product_block",
+          "settings": {
+            "product": "black-leather-bag",
+            "button_label": "Click Me",
+            "button_top": 10,
+            "button_left": 0,
+            "button_right": 0,
+            "button_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "product_block_CCfYKK"
+      ],
+      "name": "Custom Product Grid",
+      "settings": {}
     }
   },
   "order": [
     "hero_jVaWmY",
-    "product_list_qU3bEB"
+    "product_list_qU3bEB",
+    "custom_product_grid_8pYPEp"
   ]
 }
