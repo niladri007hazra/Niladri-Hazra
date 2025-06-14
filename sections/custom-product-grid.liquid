@@ -1,6 +1,115 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{% stylesheet %}
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
   }
+  .product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-button {
+    position: absolute;
+    padding: 8px 12px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+{% endstylesheet %}
+
+<div class="product-grid">
+  {% for block in section.blocks %}
+    {% assign product = all_products[block.settings.product] %}
+    {% if product %}
+      <div class="product-card">
+        <input type="checkbox" id="product-{{ forloop.index }}" data-product-id="{{ product.id }}">
+        <label for="product-{{ forloop.index }}">{{ product.title }}</label>
+        <img src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.title }}" style="width: 100%; margin: 10px 0;" />
+        <button
+          class="product-button"
+          style="
+            top: {{ block.settings.button_top }}px;
+            left: {{ block.settings.button_left }}px;
+            right: {{ block.settings.button_right }}px;
+            bottom: {{ block.settings.button_bottom }}px;
+          "
+        >
+          {{ block.settings.button_label }}
+        </button>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<div style="margin-top: 20px;">
+  <button class="product-button" onclick="handleMainButton()">Main Action Button</button>
+</div>
+
+<script>
+  function handleMainButton() {
+    const selectedProducts = [];
+    document.querySelectorAll('input[type=checkbox]:checked').forEach(cb => {
+      selectedProducts.push(cb.dataset.productId);
+    });
+    alert("Selected Product IDs: " + selectedProducts.join(', '));
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Custom Product Grid",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "product_block",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Click Me"
+        },
+        {
+          "type": "number",
+          "id": "button_top",
+          "label": "Top (px)",
+          "default": 10
+        },
+        {
+          "type": "number",
+          "id": "button_left",
+          "label": "Left (px)",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "button_right",
+          "label": "Right (px)",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "button_bottom",
+          "label": "Bottom (px)",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Product Grid",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}
