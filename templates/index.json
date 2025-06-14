@@ -76,7 +76,7 @@
             "wrap": "pretty",
             "color": "var(--color-foreground)",
             "background": true,
-            "background_color": "#fdf8f8",
+            "background_color": "rgba(0,0,0,0)",
             "corner_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
