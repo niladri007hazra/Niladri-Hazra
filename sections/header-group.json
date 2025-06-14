@@ -35,7 +35,8 @@
         "announcement_UbkHrQ"
       ],
       "custom_css": [
-        ".announcement-bar__slides {max-width: unset;}"
+        ".announcement-bar__slides {max-width: unset;}",
+        "slideshow-slide.announcement-bar__slide {display: flex; flex-direction: row;}"
       ],
       "name": "t:names.announcement_bar",
       "settings": {
