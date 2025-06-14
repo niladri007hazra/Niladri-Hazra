@@ -65,21 +65,6 @@
   {% endfor %}
 </div>
 
-<ul class="test">
-  {% for block in section.blocks %}
-    {% assign product = all_products[block.settings.product] %}
-    {% if product %}
-      <div
-        class="product-grid__item product-grid__item--{{ forloop.index0 }}"
-        data-product-id="{{ product.id }}"
-        data-view-transition-id="{{ product.id }}"
-      >
-        {% render 'product-card', product: product %}
-      </div>
-    {% endif %}
-  {% endfor %}
-</ul>
-
 
 {% schema %}
 {
