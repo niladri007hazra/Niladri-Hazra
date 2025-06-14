@@ -33,6 +33,32 @@
           },
           "blocks": {}
         },
+        "text_XyLEN7": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>New arrivals</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "text_iXYWz6": {
           "type": "text",
           "name": "t:names.text",
@@ -58,11 +84,28 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "button_rGWMwd": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Shop now",
+            "link": "shopify://collections/all",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "logo_4AeNBU",
-        "text_iXYWz6"
+        "text_XyLEN7",
+        "text_iXYWz6",
+        "button_rGWMwd"
       ],
       "custom_css": [
         ".text-block {color: black;}"
