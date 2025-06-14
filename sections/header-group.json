@@ -19,7 +19,7 @@
           "settings": {
             "logo-text": "TISSO VISON",
             "text": "Find the ideal gift for your loved ones.",
-            "button-link": "",
+            "button-link": "#",
             "button-label": "choose gift",
             "link": "#",
             "font": "var(--font-body--family)",
