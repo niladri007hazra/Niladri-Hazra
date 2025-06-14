@@ -11,7 +11,7 @@ slideshow-slide.announcement-bar__slide {
 }
 slideshow-slide.announcement-bar__slide h2,
 a {
-  margin: 0px;
+  margin: 0px !important;
 }
 slideshow-slide.announcement-bar__slide a {
   padding: 5px 15px;
