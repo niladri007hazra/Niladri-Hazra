@@ -35,8 +35,10 @@
       </p>
     {% endif %}
   
-    {% if block.settings.text != blank %}
-      
+    {% if block.settings.button-link != blank %}
+      <a href="{{ block.settings.button-link }}">
+        
+      </a>
     {% endif %}
     
     
@@ -157,6 +159,11 @@
     {
       "type": "url",
       "id": "button-link",
+      "label": "Button link"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "button-label",
       "label": "Button label"
     },
     {
