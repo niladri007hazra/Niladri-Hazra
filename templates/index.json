@@ -404,8 +404,8 @@
           "settings": {
             "product": "black-leather-bag",
             "button_label": "Click Me",
-            "button_top": 105,
-            "button_left": 105,
+            "button_top": 200,
+            "button_left": 130,
             "button_right": 0,
             "button_bottom": 0
           }
@@ -415,8 +415,8 @@
           "settings": {
             "product": "blue-silk-tuxedo",
             "button_label": "Click Me",
-            "button_top": 130,
-            "button_left": 130,
+            "button_top": 250,
+            "button_left": 220,
             "button_right": 0,
             "button_bottom": 0
           }
@@ -426,8 +426,8 @@
           "settings": {
             "product": "chequered-red-shirt",
             "button_label": "Click Me",
-            "button_top": 55,
-            "button_left": 120,
+            "button_top": 100,
+            "button_left": 180,
             "button_right": 0,
             "button_bottom": 0
           }
