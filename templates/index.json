@@ -109,7 +109,8 @@
       ],
       "custom_css": [
         ".text-block {color: black;}",
-        ".hero__content-wrapper .button {border-radius: 0;}"
+        ".hero__content-wrapper .button {border-radius: 0; display: flex; align-items: center; gap:10px;}",
+        ".hero__content-wrapper .button span{width: 30px}"
       ],
       "name": "t:names.hero",
       "settings": {
