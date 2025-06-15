@@ -66,10 +66,8 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
-    
-{% comment %}
-  
 
+{% layout none %}
     <div id="QuickViewModal" class="quick-view-modal" style="display:none;">
       <div class="quick-view-content">
         <button class="close-quick-view">×</button>
@@ -112,9 +110,6 @@
       }
     });
     </script>
-
-{% endcomment %}
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
 
