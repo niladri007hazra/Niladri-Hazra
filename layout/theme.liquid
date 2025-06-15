@@ -135,6 +135,66 @@
     </script>
 
 {% endcomment %}
+{% style %}
+.quick-view-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.quick-view-wrapper {
+  background: white;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  max-width: 700px;
+  width: 100%;
+}
+
+.quick-view-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.variant-btn {
+  margin: 5px;
+  padding: 8px 16px;
+  border: 1px solid #000;
+  background: #fff;
+  cursor: pointer;
+}
+
+.variant-btn.active {
+  background: #000;
+  color: #fff;
+}
+
+.variant-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+{% endstyle %}
 <div id="QuickViewModal" style="display: none;" class="quick-view-modal">
   <div class="quick-view-wrapper">
     <button class="quick-view-close">×</button>
