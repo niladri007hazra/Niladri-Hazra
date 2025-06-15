@@ -6,6 +6,8 @@
   <head>
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'custom-style.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
 
     {%- if settings.favicon != blank -%}
       <link
@@ -64,5 +66,49 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
+    
+
+    <div id="QuickViewModal" class="quick-view-modal" style="display:none;">
+      <div class="quick-view-content">
+        <button class="close-quick-view">×</button>
+        <div id="QuickViewContent"></div>
+      </div>
+    </div>
+    
+    <style>
+      .quick-view-modal {
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.5); z-index: 1000;
+        display: flex; justify-content: center; align-items: center;
+      }
+      .quick-view-content {
+        background: #fff; width: 90%; max-width: 1000px; display: flex; gap: 2rem;
+        padding: 2rem; border-radius: 10px; overflow: auto;
+      }
+      .quick-view-images { flex: 1; }
+      .quick-view-info { flex: 1; }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+    document.querySelectorAll('.quick-view-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const handle = this.dataset.productHandle;
+        fetch(`/products/${handle}?view=quickView`)
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById('QuickViewContent').innerHTML = html;
+            document.getElementById('QuickViewModal').style.display = 'flex';
+          });
+      });
+    });
+    
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('close-quick-view')) {
+        document.getElementById('QuickViewModal').style.display = 'none';
+      }
+    });
+    </script>
+
   </body>
 </html>
