@@ -135,6 +135,26 @@
     </script>
 
 {% endcomment %}
+<div id="QuickViewModal" style="display: none;" class="quick-view-modal">
+  <div class="quick-view-wrapper">
+    <button class="quick-view-close">×</button>
+    <div class="quick-view-image">
+      <img id="QuickViewImage" src="" alt="" />
+    </div>
+    <div class="quick-view-details">
+      <h3 id="QuickViewTitle">Product Title</h3>
+      <p id="QuickViewPrice">0.00€</p>
+      <p id="QuickViewDescription">Product description</p>
+
+      <form id="QuickViewForm">
+        <div class="variant-section" id="VariantOptionsContainer"></div>
+        <input type="hidden" id="QuickViewVariantId" name="id" />
+        <button type="submit" class="add-to-cart-btn">ADD TO CART →</button>
+        <p id="QuickViewMessage" style="display: none; color: green; margin-top: 10px;">✔ Product added to cart</p>
+      </form>
+    </div>
+  </div>
+</div>
 
 
   </body>
