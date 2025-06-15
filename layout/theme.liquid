@@ -155,6 +155,126 @@
     </div>
   </div>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("QuickViewModal");
+  const form = document.getElementById("QuickViewForm");
+  const variantInput = document.getElementById("QuickViewVariantId");
+  const message = document.getElementById("QuickViewMessage");
+
+  document.querySelectorAll(".quick-view-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      const handle = button.dataset.handle;
+      fetch(`/products/${handle}?view=product-quick-view`)
+        .then(res => res.text())
+        .then(html => {
+          const temp = document.createElement("div");
+          temp.innerHTML = html;
+          const product = JSON.parse(temp.querySelector("[data-product-json]").textContent);
+
+          // Fill in content
+          document.getElementById("QuickViewImage").src = product.featured_image;
+          document.getElementById("QuickViewTitle").textContent = product.title;
+          document.getElementById("QuickViewDescription").textContent = product.description;
+          document.getElementById("QuickViewPrice").textContent = (product.variants[0].price / 100).toFixed(2) + "€";
+
+          // Build variant options (styled like buttons/selects)
+          const optionsContainer = document.getElementById("VariantOptionsContainer");
+          optionsContainer.innerHTML = "";
+          product.options.forEach((optionName, index) => {
+            const values = [...new Set(product.variants.map(v => v[`option${index + 1}`]))];
+            const group = document.createElement("div");
+            group.classList.add("variant-group");
+
+            const label = document.createElement("label");
+            label.textContent = optionName;
+            group.appendChild(label);
+
+            if (optionName.toLowerCase().includes("size")) {
+              const select = document.createElement("select");
+              select.innerHTML = `<option value="">Choose your ${optionName.toLowerCase()}</option>` +
+                values.map(v => `<option value="${v}">${v}</option>`).join("");
+              select.dataset.index = index;
+              group.appendChild(select);
+            } else {
+              values.forEach(value => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.textContent = value;
+                btn.dataset.index = index;
+                btn.dataset.value = value;
+                btn.classList.add("variant-btn");
+                group.appendChild(btn);
+              });
+            }
+            optionsContainer.appendChild(group);
+          });
+
+          // Set default variant ID
+          variantInput.value = product.variants[0].id;
+
+          // Handle variant change
+          let selectedOptions = Array(product.options.length).fill(null);
+
+          optionsContainer.addEventListener("click", e => {
+            if (e.target.classList.contains("variant-btn")) {
+              const index = parseInt(e.target.dataset.index);
+              selectedOptions[index] = e.target.dataset.value;
+
+              // Toggle active state
+              e.target.parentElement.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+              e.target.classList.add("active");
+
+              updateVariantId();
+            }
+          });
+
+          optionsContainer.querySelectorAll("select").forEach(select => {
+            select.addEventListener("change", () => {
+              const index = parseInt(select.dataset.index);
+              selectedOptions[index] = select.value;
+              updateVariantId();
+            });
+          });
+
+          function updateVariantId() {
+            const matched = product.variants.find(v =>
+              selectedOptions.every((val, i) => val === v[`option${i + 1}`])
+            );
+            if (matched) {
+              variantInput.value = matched.id;
+              document.getElementById("QuickViewPrice").textContent = (matched.price / 100).toFixed(2) + "€";
+            }
+          }
+
+          modal.style.display = "block";
+        });
+    });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const variantId = variantInput.value;
+    if (!variantId) return alert("Please select options.");
+
+    fetch("/cart/add.js", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ id: variantId, quantity: 1 }),
+    })
+      .then(res => res.json())
+      .then(() => {
+        message.style.display = "block";
+        setTimeout(() => message.style.display = "none", 2000);
+      })
+      .catch(() => alert("Error adding to cart."));
+  });
+
+  document.querySelector(".quick-view-close").addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+});
+</script>
 
 
   </body>
