@@ -1,3 +1,42 @@
+{% style %}
+  #modal-container {
+      position: fixed; /* Change to fixed to cover the viewport */
+      top: 0; /* Align to the top */
+      left: 0; /* Align to the left */
+      width: 100vw; /* Full width of the viewport */
+      height: 100vh; /* Full height of the viewport */
+      background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */ */
+      z-index: 1000; /* Ensure it appears above other content */ */
+      display: none;
+  }
+  .collection-add-to-cart {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background: #1d438a;
+    border-radius: 50%;
+    top: 60%;
+    right: 18px;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .collection-add-to-cart:hover {
+    background: #778eb8;
+  }
+  .material-symbols-outlined {
+    color: white;
+    font-variation-settings:
+    'FILL' 0,Add commentMore actions
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+{% endstyle %}
+
 {% stylesheet %}
     .custom-product-grid {
       display: grid;
